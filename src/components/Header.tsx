@@ -3,8 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
-import AppImage from '@/components/ui/AppImage';
 import Icon from '@/components/ui/AppIcon';
+import BrandLogo from '@/components/ui/BrandLogo';
 import LocaleSwitcher from '@/components/LocaleSwitcher';
 
 export default function Header() {
@@ -46,15 +46,8 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 md:h-20 flex items-center justify-between gap-6">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 shrink-0" aria-label={t('home')}>
-            <AppImage
-              src="/assets/images/lamviec-logo-none-1788163277157.png"
-              alt="LamViec360 logo"
-              width={140}
-              height={36}
-              priority
-              className="h-8 md:h-9 w-auto object-contain"
-            />
+          <Link href="/" className="flex items-center shrink-0" aria-label={t('home')}>
+            <BrandLogo className="text-[1.6rem] md:text-[1.85rem]" />
           </Link>
 
           {/* Desktop Nav */}

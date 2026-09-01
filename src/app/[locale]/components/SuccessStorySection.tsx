@@ -38,7 +38,7 @@ export default function SuccessStorySection() {
 
               {/* Company badge */}
               <div className="absolute top-8 right-8 glass-card rounded-xl px-4 py-2.5 flex items-center gap-2">
-                <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-red-400 to-orange-400 flex items-center justify-center text-white text-xs font-800">T</div>
+                <div className="w-6 h-6 rounded-lg bg-brand-blue flex items-center justify-center text-white text-xs font-800">T</div>
                 <span className="text-sm font-700 text-foreground">Tiki</span>
               </div>
             </div>

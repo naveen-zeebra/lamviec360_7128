@@ -75,6 +75,7 @@
         "label": "DISCOVER JOBS",
         "heading": "See every job detail before you apply.",
         "description": "No more mystery listings. Every role on LamViec360 shows real salary bands, team size, day-to-day expectations, and why the role is open. You decide with confidence.",
+        "imageAlt": "LamViec360 job search results showing salary ranges and match scores for each role",
         "metrics": {
           "salaryTransparency": "Salary Transparency",
           "responseRate": "Faster Response Rate",
@@ -86,6 +87,7 @@
         "label": "SMART APPLY",
         "heading": "Apply smarter. Move faster.",
         "description": "Your profile IS your application. Fill it once, apply everywhere. Track every response in real-time — no more wondering if your CV landed.",
+        "imageAlt": "Application tracker showing the real-time status of every submitted application",
         "metrics": {
           "application": "Application",
           "responseTracking": "Response Tracking",
@@ -94,62 +96,17 @@
         "cta": "Create My Profile"
       },
       "grow": {
-        "label": "CAREER GROWTH",
-        "heading": "Keep moving forward.",
-        "description": "Earn verified badges, complete employer-backed micro-courses, and watch your profile ranking rise. Every action builds toward your next level.",
+        "label": "KEEP GROWING",
+        "heading": "Upskill while you search.",
+        "description": "Enrol in employer-backed micro-courses, earn verified skill badges, and watch your profile climb the rankings recruiters see. Every course you finish moves you up the list.",
+        "imageAlt": "Course catalogue of employer-backed micro-courses with an enrol button and earned skill badges",
         "metrics": {
-          "hiredIn30Days": "Hired in 30 Days",
-          "skillBadges": "Skill Badges",
-          "careerJourneys": "Career Journeys"
+          "microCourses": "Micro-courses",
+          "skillBadges": "Verified Badges",
+          "fasterShortlist": "Faster Shortlisting"
         },
-        "cta": "Start Growing"
+        "cta": "Browse Courses"
       }
-    },
-    "discoverPreview": {
-      "searchPlaceholder": "Search jobs, companies...",
-      "location": "Ho Chi Minh City",
-      "search": "Search",
-      "jobs": {
-        "designer": "Senior Product Designer",
-        "marketing": "Growth Marketing Lead",
-        "engineer": "Full-Stack Engineer"
-      },
-      "badges": {
-        "new": "New",
-        "hot": "Hot"
-      }
-    },
-    "applyPreview": {
-      "title": "Application Progress",
-      "steps": {
-        "profile": "Profile",
-        "resume": "Resume",
-        "questions": "Questions",
-        "review": "Review",
-        "submit": "Submit"
-      },
-      "stepHeading": "Step {number}: {step}",
-      "stepHints": {
-        "profile": "Your profile is 92% complete. Add your portfolio link to boost match scores.",
-        "resume": "Upload your latest CV or import directly from LinkedIn.",
-        "questions": "Answer 3 role-specific questions from the hiring team.",
-        "review": "Review your application before sending to Tiki.",
-        "submit": "Application submitted! Track responses in real-time."
-      }
-    },
-    "growPreview": {
-      "title": "Career Progress — Tiki Application",
-      "steps": {
-        "applied": "Applied",
-        "underReview": "Under Review",
-        "shortlisted": "Shortlisted",
-        "interview": "Interview",
-        "offer": "Offer"
-      },
-      "active": "Active",
-      "done": "Done",
-      "interviewTitle": "Interview with Tiki Team",
-      "interviewTime": "Tomorrow, 10:00 AM · Video Call"
     }
   },
   "FeaturedJobs": {

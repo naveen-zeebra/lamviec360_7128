@@ -68,13 +68,14 @@
   "CareerJourney": {
     "sectionLabel": "Hành trình nghề nghiệp",
     "eyebrow": "Hành trình nghề nghiệp của bạn",
-    "heading": "Mọi thứ bạn cần<br></br>để tiến về phía trước.",
+    "heading": "Mọi thứ bạn cần<br></br>để tiến về phía trước",
     "stageAria": "Giai đoạn {number}: {label}",
     "stages": {
       "discover": {
         "label": "KHÁM PHÁ VIỆC LÀM",
         "heading": "Xem mọi chi tiết công việc trước khi ứng tuyển.",
         "description": "Không còn tin tuyển dụng mập mờ. Mọi vị trí trên LamViec360 đều hiển thị khoảng lương thật, quy mô đội ngũ, công việc hằng ngày và lý do vị trí được mở. Bạn quyết định với sự tự tin.",
+        "imageAlt": "Kết quả tìm việc trên LamViec360 hiển thị khoảng lương và điểm phù hợp cho từng vị trí",
         "metrics": {
           "salaryTransparency": "Minh bạch lương",
           "responseRate": "Phản hồi nhanh hơn",
@@ -86,6 +87,7 @@
         "label": "ỨNG TUYỂN THÔNG MINH",
         "heading": "Ứng tuyển thông minh hơn. Tiến nhanh hơn.",
         "description": "Hồ sơ của bạn CHÍNH LÀ đơn ứng tuyển. Điền một lần, ứng tuyển mọi nơi. Theo dõi từng phản hồi theo thời gian thực — không còn băn khoăn CV của bạn đã tới nơi hay chưa.",
+        "imageAlt": "Bảng theo dõi ứng tuyển hiển thị trạng thái của từng đơn đã nộp theo thời gian thực",
         "metrics": {
           "application": "Ứng tuyển",
           "responseTracking": "Theo dõi phản hồi",
@@ -94,62 +96,17 @@
         "cta": "Tạo hồ sơ của tôi"
       },
       "grow": {
-        "label": "PHÁT TRIỂN SỰ NGHIỆP",
-        "heading": "Luôn tiến về phía trước.",
-        "description": "Nhận huy hiệu đã xác minh, hoàn thành các khóa học ngắn do nhà tuyển dụng bảo trợ và chứng kiến thứ hạng hồ sơ của bạn tăng lên. Mỗi hành động đều đưa bạn tới cấp độ tiếp theo.",
+        "label": "LIÊN TỤC PHÁT TRIỂN",
+        "heading": "Nâng cao kỹ năng trong lúc tìm việc.",
+        "description": "Đăng ký các khóa học ngắn do nhà tuyển dụng bảo trợ, nhận huy hiệu kỹ năng đã xác minh và chứng kiến hồ sơ của bạn tăng hạng trong mắt nhà tuyển dụng. Mỗi khóa học hoàn thành đưa bạn lên cao hơn trong danh sách.",
+        "imageAlt": "Danh mục khóa học ngắn do nhà tuyển dụng bảo trợ cùng nút đăng ký và các huy hiệu kỹ năng đã nhận",
         "metrics": {
-          "hiredIn30Days": "Được tuyển trong 30 ngày",
-          "skillBadges": "Huy hiệu kỹ năng",
-          "careerJourneys": "Hành trình nghề nghiệp"
+          "microCourses": "Khóa học ngắn",
+          "skillBadges": "Huy hiệu đã xác minh",
+          "fasterShortlist": "Vào vòng trong nhanh hơn"
         },
-        "cta": "Bắt đầu phát triển"
+        "cta": "Xem các khóa học"
       }
-    },
-    "discoverPreview": {
-      "searchPlaceholder": "Tìm việc làm, công ty...",
-      "location": "Thành phố Hồ Chí Minh",
-      "search": "Tìm kiếm",
-      "jobs": {
-        "designer": "Nhà thiết kế sản phẩm cấp cao",
-        "marketing": "Trưởng nhóm Marketing tăng trưởng",
-        "engineer": "Kỹ sư Full-Stack"
-      },
-      "badges": {
-        "new": "Mới",
-        "hot": "Hot"
-      }
-    },
-    "applyPreview": {
-      "title": "Tiến trình ứng tuyển",
-      "steps": {
-        "profile": "Hồ sơ",
-        "resume": "CV",
-        "questions": "Câu hỏi",
-        "review": "Xem lại",
-        "submit": "Gửi"
-      },
-      "stepHeading": "Bước {number}: {step}",
-      "stepHints": {
-        "profile": "Hồ sơ của bạn đã hoàn thành 92%. Thêm liên kết portfolio để tăng điểm phù hợp.",
-        "resume": "Tải lên CV mới nhất hoặc nhập trực tiếp từ LinkedIn.",
-        "questions": "Trả lời 3 câu hỏi riêng cho vị trí từ đội ngũ tuyển dụng.",
-        "review": "Xem lại đơn ứng tuyển trước khi gửi tới Tiki.",
-        "submit": "Đã nộp đơn! Theo dõi phản hồi theo thời gian thực."
-      }
-    },
-    "growPreview": {
-      "title": "Tiến trình nghề nghiệp — Ứng tuyển Tiki",
-      "steps": {
-        "applied": "Đã ứng tuyển",
-        "underReview": "Đang xét duyệt",
-        "shortlisted": "Vào vòng trong",
-        "interview": "Phỏng vấn",
-        "offer": "Nhận offer"
-      },
-      "active": "Đang diễn ra",
-      "done": "Hoàn tất",
-      "interviewTitle": "Phỏng vấn với đội ngũ Tiki",
-      "interviewTime": "Ngày mai, 10:00 · Gọi video"
     }
   },
   "FeaturedJobs": {

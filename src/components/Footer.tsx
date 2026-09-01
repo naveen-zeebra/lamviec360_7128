@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
-import AppImage from '@/components/ui/AppImage';
 import Icon from '@/components/ui/AppIcon';
+import BrandLogo from '@/components/ui/BrandLogo';
 import LocaleSwitcher from '@/components/LocaleSwitcher';
 
 export default function Footer() {
@@ -29,14 +29,8 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-12 mb-12">
           {/* Brand */}
           <div className="md:max-w-xs">
-            <AppImage
-              src="/assets/images/lamviec-logo-none-1788163277157.png"
-              alt="LamViec360"
-              width={160}
-              height={42}
-              className="h-10 w-auto object-contain mb-4"
-            />
-            <p className="text-sm text-muted leading-relaxed">
+            <BrandLogo className="text-[1.75rem]" />
+            <p className="text-sm text-muted leading-relaxed mt-4">
               {t('tagline')}
             </p>
           </div>

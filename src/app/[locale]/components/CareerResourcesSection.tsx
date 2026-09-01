@@ -10,21 +10,21 @@ const resourceMeta = [
     number: '01',
     image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=800&q=80',
     href: '#',
-    color: 'from-blue-500 to-primary',
+    color: 'from-brand-blue to-primary',
   },
   {
     key: 'guidance',
     number: '02',
     image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80',
     href: '#',
-    color: 'from-amber-500 to-orange-500',
+    color: 'from-brand-yellow to-accent',
   },
   {
     key: 'interview',
     number: '03',
     image: 'https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=800&q=80',
     href: '#ai-prep',
-    color: 'from-green-500 to-emerald-500',
+    color: 'from-brand-green to-success',
   },
 ] as const;
 

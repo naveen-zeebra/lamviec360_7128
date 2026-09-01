@@ -16,7 +16,7 @@ const jobsMeta = [
     badgeColor: 'bg-primary/10 text-primary',
     skills: ['UX Research', 'Figma', 'Product Design'],
     postedKey: 'designer',
-    companyColor: 'from-red-400 to-orange-400',
+    companyColor: 'bg-brand-blue text-white',
   },
   {
     key: 'marketing',
@@ -25,10 +25,10 @@ const jobsMeta = [
     salary: '28–40M VND',
     match: 87,
     hasBadge: true,
-    badgeColor: 'bg-red-50 text-red-500',
+    badgeColor: 'bg-brand-red/10 text-brand-red',
     skills: ['Performance Marketing', 'Analytics', 'SEO'],
     postedKey: 'marketing',
-    companyColor: 'from-blue-500 to-blue-600',
+    companyColor: 'bg-brand-green text-white',
   },
   {
     key: 'engineer',
@@ -40,7 +40,7 @@ const jobsMeta = [
     badgeColor: '',
     skills: ['React', 'Node.js', 'PostgreSQL'],
     postedKey: 'engineer',
-    companyColor: 'from-pink-400 to-purple-500',
+    companyColor: 'bg-brand-yellow text-navy',
   },
 ] as const;
 
@@ -87,7 +87,7 @@ export default function FeaturedJobsSection() {
               {/* Card Header */}
               <div className="flex items-start justify-between mb-5">
                 <div className="flex items-center gap-3">
-                  <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${job.companyColor} flex items-center justify-center font-800 text-white text-lg shadow-sm`}>
+                  <div className={`w-12 h-12 rounded-2xl ${job.companyColor} flex items-center justify-center font-800 text-lg shadow-sm`}>
                     {company[0]}
                   </div>
                   <div>

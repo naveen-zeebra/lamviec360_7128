@@ -40,6 +40,12 @@ module.exports = {
         navy: 'var(--navy)',
         success: 'var(--success)',
         warning: 'var(--warning)',
+        brand: {
+          blue: 'var(--brand-blue)',
+          red: 'var(--brand-red)',
+          green: 'var(--brand-green)',
+          yellow: 'var(--brand-yellow)',
+        },
       },
       borderRadius: {
         DEFAULT: 'var(--radius)',
