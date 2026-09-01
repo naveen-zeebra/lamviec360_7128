@@ -1,0 +1,417 @@
+{
+  "Metadata": {
+    "title": "LamViec360 — Nền tảng nghề nghiệp hiện đại của Việt Nam",
+    "description": "Tìm bước tiến sự nghiệp tiếp theo với minh bạch lương hoàn toàn, kết nối bằng AI và hơn 48.000 việc làm đã xác minh từ các nhà tuyển dụng hàng đầu Việt Nam.",
+    "ogTitle": "LamViec360 — Nền tảng nghề nghiệp",
+    "ogDescription": "Hệ điều hành nghề nghiệp hiện đại của Việt Nam với mức lương thật và kết nối bằng AI."
+  },
+  "LocaleSwitcher": {
+    "label": "Đổi ngôn ngữ",
+    "switchTo": "Chuyển sang {language}"
+  },
+  "Header": {
+    "nav": {
+      "findJobs": "Tìm việc",
+      "companies": "Công ty",
+      "careerResources": "Cẩm nang nghề nghiệp",
+      "howItWorks": "Cách hoạt động"
+    },
+    "companySite": "Trang doanh nghiệp",
+    "login": "Đăng nhập",
+    "register": "Đăng ký",
+    "createFreeAccount": "Tạo tài khoản miễn phí",
+    "openMenu": "Mở menu",
+    "closeMenu": "Đóng menu",
+    "mobileNavLabel": "Điều hướng trên di động",
+    "mainNavLabel": "Điều hướng chính",
+    "home": "Trang chủ LamViec360"
+  },
+  "Hero": {
+    "sectionLabel": "Phần giới thiệu",
+    "eyebrow": "Nền tảng nghề nghiệp uy tín nhất Việt Nam",
+    "headline": "Bước tiến<br></br>sự nghiệp tiếp theo<br></br>bắt đầu từ đây.",
+    "description": "LamViec360 kết nối nhân tài Việt Nam đầy khát vọng với những nhà tuyển dụng đăng tin đầy đủ bối cảnh — lương thật, đội ngũ thật, kỳ vọng thật. Không còn mơ hồ.",
+    "ctaFindJob": "Tìm việc cho tôi",
+    "ctaCreateProfile": "Tạo hồ sơ của tôi",
+    "professionalAlt": "Chuyên gia {number}",
+    "socialProof": "Được <b>{count}</b> chuyên gia tin dùng",
+    "portraitAlt": "Chuyên gia Việt Nam tự tin sử dụng LamViec360 trên laptop trong văn phòng hiện đại",
+    "matchCard": {
+      "label": "Thẻ việc làm phù hợp",
+      "matchScore": "Điểm phù hợp",
+      "role": "Nhà thiết kế sản phẩm cấp cao",
+      "company": "Tiki"
+    },
+    "statusCard": {
+      "label": "Thẻ trạng thái ứng tuyển",
+      "title": "Trạng thái ứng tuyển",
+      "profileCompleted": "Đã hoàn tất hồ sơ",
+      "applicationSubmitted": "Đã nộp đơn ứng tuyển",
+      "interviewScheduled": "Đã lên lịch phỏng vấn"
+    },
+    "salaryCard": {
+      "label": "Thông tin lương",
+      "title": "Lương công khai",
+      "value": "94% việc làm"
+    }
+  },
+  "TrustStrip": {
+    "sectionLabel": "Thống kê nền tảng",
+    "logosLabel": "Logo nhà tuyển dụng",
+    "metrics": {
+      "activeJobs": "Việc làm đang tuyển",
+      "professionals": "Chuyên gia",
+      "employers": "Nhà tuyển dụng"
+    },
+    "trustedBy": "Được các nhà tuyển dụng hàng đầu Việt Nam tin dùng"
+  },
+  "CareerJourney": {
+    "sectionLabel": "Hành trình nghề nghiệp",
+    "eyebrow": "Hành trình nghề nghiệp của bạn",
+    "heading": "Mọi thứ bạn cần<br></br>để tiến về phía trước.",
+    "stageAria": "Giai đoạn {number}: {label}",
+    "stages": {
+      "discover": {
+        "label": "KHÁM PHÁ VIỆC LÀM",
+        "heading": "Xem mọi chi tiết công việc trước khi ứng tuyển.",
+        "description": "Không còn tin tuyển dụng mập mờ. Mọi vị trí trên LamViec360 đều hiển thị khoảng lương thật, quy mô đội ngũ, công việc hằng ngày và lý do vị trí được mở. Bạn quyết định với sự tự tin.",
+        "metrics": {
+          "salaryTransparency": "Minh bạch lương",
+          "responseRate": "Phản hồi nhanh hơn",
+          "availableRoles": "Vị trí đang tuyển"
+        },
+        "cta": "Khám phá việc làm"
+      },
+      "apply": {
+        "label": "ỨNG TUYỂN THÔNG MINH",
+        "heading": "Ứng tuyển thông minh hơn. Tiến nhanh hơn.",
+        "description": "Hồ sơ của bạn CHÍNH LÀ đơn ứng tuyển. Điền một lần, ứng tuyển mọi nơi. Theo dõi từng phản hồi theo thời gian thực — không còn băn khoăn CV của bạn đã tới nơi hay chưa.",
+        "metrics": {
+          "application": "Ứng tuyển",
+          "responseTracking": "Theo dõi phản hồi",
+          "timeToOffer": "Thời gian nhận offer TB"
+        },
+        "cta": "Tạo hồ sơ của tôi"
+      },
+      "grow": {
+        "label": "PHÁT TRIỂN SỰ NGHIỆP",
+        "heading": "Luôn tiến về phía trước.",
+        "description": "Nhận huy hiệu đã xác minh, hoàn thành các khóa học ngắn do nhà tuyển dụng bảo trợ và chứng kiến thứ hạng hồ sơ của bạn tăng lên. Mỗi hành động đều đưa bạn tới cấp độ tiếp theo.",
+        "metrics": {
+          "hiredIn30Days": "Được tuyển trong 30 ngày",
+          "skillBadges": "Huy hiệu kỹ năng",
+          "careerJourneys": "Hành trình nghề nghiệp"
+        },
+        "cta": "Bắt đầu phát triển"
+      }
+    },
+    "discoverPreview": {
+      "searchPlaceholder": "Tìm việc làm, công ty...",
+      "location": "Thành phố Hồ Chí Minh",
+      "search": "Tìm kiếm",
+      "jobs": {
+        "designer": "Nhà thiết kế sản phẩm cấp cao",
+        "marketing": "Trưởng nhóm Marketing tăng trưởng",
+        "engineer": "Kỹ sư Full-Stack"
+      },
+      "badges": {
+        "new": "Mới",
+        "hot": "Hot"
+      }
+    },
+    "applyPreview": {
+      "title": "Tiến trình ứng tuyển",
+      "steps": {
+        "profile": "Hồ sơ",
+        "resume": "CV",
+        "questions": "Câu hỏi",
+        "review": "Xem lại",
+        "submit": "Gửi"
+      },
+      "stepHeading": "Bước {number}: {step}",
+      "stepHints": {
+        "profile": "Hồ sơ của bạn đã hoàn thành 92%. Thêm liên kết portfolio để tăng điểm phù hợp.",
+        "resume": "Tải lên CV mới nhất hoặc nhập trực tiếp từ LinkedIn.",
+        "questions": "Trả lời 3 câu hỏi riêng cho vị trí từ đội ngũ tuyển dụng.",
+        "review": "Xem lại đơn ứng tuyển trước khi gửi tới Tiki.",
+        "submit": "Đã nộp đơn! Theo dõi phản hồi theo thời gian thực."
+      }
+    },
+    "growPreview": {
+      "title": "Tiến trình nghề nghiệp — Ứng tuyển Tiki",
+      "steps": {
+        "applied": "Đã ứng tuyển",
+        "underReview": "Đang xét duyệt",
+        "shortlisted": "Vào vòng trong",
+        "interview": "Phỏng vấn",
+        "offer": "Nhận offer"
+      },
+      "active": "Đang diễn ra",
+      "done": "Hoàn tất",
+      "interviewTitle": "Phỏng vấn với đội ngũ Tiki",
+      "interviewTime": "Ngày mai, 10:00 · Gọi video"
+    }
+  },
+  "FeaturedJobs": {
+    "sectionLabel": "Việc làm nổi bật",
+    "eyebrow": "Phù hợp với bạn",
+    "heading": "Những vị trí có thể<br></br>thay đổi sự nghiệp của bạn.",
+    "viewAll": "Xem tất cả hơn 48.000 việc làm",
+    "match": "Phù hợp {match}%",
+    "viewRole": "Xem vị trí",
+    "viewRoleAria": "Xem vị trí: {title}",
+    "cardAria": "{title} tại {company}",
+    "save": "Lưu {title}",
+    "removeSaved": "Bỏ lưu {title}",
+    "type": {
+      "fullTime": "Toàn thời gian"
+    },
+    "posted": {
+      "designer": "2 ngày trước",
+      "marketing": "1 ngày trước",
+      "engineer": "3 ngày trước"
+    },
+    "location": {
+      "hcmc": "Thành phố Hồ Chí Minh",
+      "remote": "Từ xa",
+      "hanoi": "Hà Nội"
+    },
+    "jobs": {
+      "designer": {
+        "title": "Nhà thiết kế sản phẩm cấp cao",
+        "badge": "Phù hợp nhất"
+      },
+      "marketing": {
+        "title": "Trưởng nhóm Marketing tăng trưởng",
+        "badge": "Hot"
+      },
+      "engineer": {
+        "title": "Kỹ sư Full-Stack"
+      }
+    }
+  },
+  "DarkResults": {
+    "sectionLabel": "Kết quả nền tảng",
+    "heading": "Những con số nói<br></br><em>to hơn mọi lời hứa.</em>",
+    "results": {
+      "jobs": "Tin tuyển dụng cập nhật mỗi ngày",
+      "professionals": "Chuyên gia đang xây dựng sự nghiệp",
+      "employers": "Nhà tuyển dụng đã xác minh tin dùng LamViec360"
+    }
+  },
+  "SuccessStory": {
+    "sectionLabel": "Câu chuyện thành công của ứng viên",
+    "eyebrow": "Câu chuyện thành công",
+    "quote": "Tôi ứng tuyển 6 vị trí chỉ trong một buổi chiều. Riêng thông tin lương đã giúp tôi tránh hai lựa chọn không phù hợp. Nhận offer từ Tiki sau 11 ngày.",
+    "name": "Nguyễn Thị Hương",
+    "role": "Nhà thiết kế sản phẩm · Thành phố Hồ Chí Minh",
+    "imageAlt": "Nguyễn Thị Hương, Nhà thiết kế sản phẩm đã tìm được công việc qua LamViec360 trong văn phòng hiện đại, sáng sủa tại Thành phố Hồ Chí Minh",
+    "avatarAlt": "Nguyễn Thị Hương, Nhà thiết kế sản phẩm tại Tiki",
+    "hiredBadge": "Được tuyển trong vòng 30 ngày",
+    "stats": {
+      "timeToOffer": "Thời gian tới offer",
+      "appliedInOneDay": "Ứng tuyển trong một ngày",
+      "matchAccuracy": "Độ chính xác khi ghép"
+    }
+  },
+  "HowItWorks": {
+    "sectionLabel": "Cách hoạt động",
+    "eyebrow": "Cách hoạt động",
+    "heading": "Hai lối đi.<br></br>Một nền tảng.",
+    "subheading": "Dù bạn đang tìm cơ hội tiếp theo hay xây dựng đội ngũ đẳng cấp thế giới — LamViec360 làm cho mọi bước trở nên rõ ràng.",
+    "tabs": {
+      "candidates": "Dành cho ứng viên",
+      "candidatesTag": "Miễn phí trọn đời",
+      "employers": "Dành cho nhà tuyển dụng",
+      "employersTag": "Đăng tin miễn phí"
+    },
+    "stepAria": "Bước {number}: {title}",
+    "ctaCandidates": "Tạo tài khoản miễn phí",
+    "ctaEmployers": "Đăng tin tuyển dụng miễn phí",
+    "candidateSteps": {
+      "profile": {
+        "title": "Xây dựng hồ sơ",
+        "description": "Xây dựng hồ sơ trong 5 phút. Nhập từ LinkedIn hoặc điền vào biểu mẫu thông minh của chúng tôi. Thêm kỹ năng, kỳ vọng lương và phong cách làm việc ưa thích.",
+        "metric": "Thiết lập 5 phút",
+        "imageAlt": "Giao diện hoàn tất hồ sơ hiển thị kỹ năng và kỳ vọng lương trong bảng điều khiển sáng sủa, gọn gàng"
+      },
+      "match": {
+        "title": "Được ghép việc",
+        "description": "Ghép việc bằng AI. Công cụ của chúng tôi đưa ra những vị trí bạn thực sự phù hợp — lọc theo lương, địa điểm, văn hóa công ty và lộ trình phát triển.",
+        "metric": "Chính xác 94%",
+        "imageAlt": "Giao diện gợi ý việc làm hiển thị các vị trí do AI ghép cùng điểm lương và mức độ hợp văn hóa"
+      },
+      "apply": {
+        "title": "Ứng tuyển",
+        "description": "Ứng tuyển chỉ với một chạm. Hồ sơ của bạn CHÍNH LÀ đơn ứng tuyển. Theo dõi từng phản hồi theo thời gian thực và lên lịch phỏng vấn mà không cần chuỗi email.",
+        "metric": "Ứng tuyển một chạm",
+        "imageAlt": "Giao diện theo dõi tiến trình ứng tuyển hiển thị cập nhật trạng thái theo thời gian thực"
+      },
+      "grow": {
+        "title": "Phát triển",
+        "description": "Nhận huy hiệu và cải thiện hồ sơ. Trong lúc tìm việc, nâng cao kỹ năng với các khóa học ngắn do nhà tuyển dụng bảo trợ. Huy hiệu đã xác minh giúp tăng thứ hạng hồ sơ của bạn.",
+        "metric": "Hơn 50 huy hiệu",
+        "imageAlt": "Bảng điều khiển tiến trình nghề nghiệp hiển thị huy hiệu đã nhận và cải thiện thứ hạng hồ sơ"
+      }
+    },
+    "employerSteps": {
+      "post": {
+        "title": "Đăng tin đầy đủ bối cảnh",
+        "description": "Mất 10 phút. Dùng trình tạo tin có cấu trúc của chúng tôi để thêm lương, văn hóa đội ngũ, lộ trình phát triển và một ngày làm việc tuyệt vời ở vị trí này trông như thế nào.",
+        "metric": "Đăng tin 10 phút"
+      },
+      "qualified": {
+        "title": "Nhận ứng viên đã sơ tuyển",
+        "description": "Ứng viên nộp đơn đã xem khoảng lương và mức độ hợp văn hóa của bạn. Không lãng phí thời gian vào kỳ vọng lệch nhau.",
+        "metric": "Đã lọc trước"
+      },
+      "engage": {
+        "title": "Khai thác nguồn nhân tài trực tiếp",
+        "description": "Chủ động tiếp cận những ứng viên phù hợp yêu cầu của bạn và đang sẵn sàng cho vị trí mới ngay bây giờ.",
+        "metric": "Thời gian thực"
+      },
+      "hire": {
+        "title": "Tuyển dụng và theo dõi kết quả",
+        "description": "Từ lần liên hệ đầu tiên đến khi ký offer, bảng điều khiển của chúng tôi theo dõi mọi tương tác với ứng viên và chỉ số thời gian tuyển dụng.",
+        "metric": "Phân tích đầy đủ"
+      }
+    }
+  },
+  "AIInterview": {
+    "sectionLabel": "Chuẩn bị phỏng vấn bằng AI",
+    "eyebrow": "Chuẩn bị phỏng vấn bằng AI",
+    "live": "TRỰC TIẾP",
+    "heading": "Luyện tập.<br></br>Chuẩn bị.<br></br>Thể hiện.",
+    "description": "Chuẩn bị phỏng vấn dựa trên vị trí, kinh nghiệm và kỹ năng của bạn. AI của chúng tôi tạo câu hỏi riêng — để bạn bước vào phòng phỏng vấn trong tâm thế sẵn sàng, không phải học thuộc.",
+    "features": {
+      "roleSpecific": {
+        "title": "Câu hỏi riêng cho từng vị trí",
+        "desc": "Được tạo từ dữ liệu phỏng vấn thực tế cho vị trí bạn nhắm tới"
+      },
+      "calibrated": {
+        "title": "Cân chỉnh theo kinh nghiệm",
+        "desc": "Độ khó điều chỉnh theo cấp độ của bạn — không có câu hỏi chung chung"
+      },
+      "feedback": {
+        "title": "Phản hồi tức thì",
+        "desc": "AI chấm điểm câu trả lời và gợi ý cải thiện"
+      }
+    },
+    "coach": "Trợ lý phỏng vấn AI",
+    "coachSubtitle": "Cá nhân hóa cho vị trí của bạn",
+    "form": {
+      "targetRole": "Vị trí mục tiêu",
+      "targetRolePlaceholder": "Chọn vị trí bạn nhắm tới",
+      "experience": "Cấp độ kinh nghiệm",
+      "experiencePlaceholder": "Chọn cấp độ kinh nghiệm",
+      "interviewType": "Loại phỏng vấn",
+      "interviewTypePlaceholder": "Chọn loại phỏng vấn",
+      "keySkills": "Kỹ năng chính",
+      "keySkillsPlaceholder": "vd. Figma, UX Research, Prototyping",
+      "start": "Bắt đầu chuẩn bị"
+    },
+    "roles": {
+      "designer": "Nhà thiết kế sản phẩm",
+      "engineer": "Kỹ sư phần mềm",
+      "marketing": "Quản lý Marketing",
+      "data": "Chuyên viên phân tích dữ liệu",
+      "pm": "Quản lý dự án"
+    },
+    "experienceLevels": {
+      "entry": "Mới đi làm (0–2 năm)",
+      "mid": "Trung cấp (2–5 năm)",
+      "senior": "Cấp cao (5–8 năm)",
+      "lead": "Trưởng nhóm / Chuyên gia chính (8+ năm)"
+    },
+    "interviewTypes": {
+      "behavioral": "Hành vi",
+      "technical": "Chuyên môn",
+      "caseStudy": "Tình huống",
+      "portfolio": "Đánh giá portfolio",
+      "cultureFit": "Mức độ hợp văn hóa"
+    },
+    "questionProgress": "Câu hỏi {current} / {total}",
+    "categories": {
+      "process": "Quy trình",
+      "behavioral": "Hành vi",
+      "technical": "Chuyên môn"
+    },
+    "questions": {
+      "q1": "Hãy trình bày quy trình của bạn khi thiết kế một tính năng mới từ bản brief ban đầu đến khi bàn giao cuối cùng. Bạn dựa vào những công cụ và framework nào?",
+      "q2": "Hãy kể về một lần nghiên cứu người dùng đã thay đổi đáng kể hướng đi của một quyết định sản phẩm. Bạn học được điều gì?",
+      "q3": "Bạn tiếp cận việc thiết kế cho khả năng tiếp cận (accessibility) như thế nào? Cho tôi một ví dụ cụ thể từ công việc trước đây của bạn.",
+      "q4": "Hãy mô tả một tình huống bạn phải phản biện lại yêu cầu của một bên liên quan. Bạn đã xử lý ra sao?",
+      "q5": "Bạn dùng những chỉ số nào để đo lường thành công của một thiết kế? Bạn bảo vệ chất lượng thiết kế với đội kỹ thuật như thế nào?"
+    },
+    "yourAnswer": "Câu trả lời của bạn",
+    "answerPlaceholder": "Nhập câu trả lời của bạn tại đây. Tập trung vào ví dụ cụ thể theo phương pháp STAR — Tình huống, Nhiệm vụ, Hành động, Kết quả.",
+    "exit": "Thoát",
+    "nextQuestion": "Câu hỏi tiếp theo",
+    "finishSession": "Kết thúc buổi luyện"
+  },
+  "CareerResources": {
+    "sectionLabel": "Cẩm nang nghề nghiệp",
+    "eyebrow": "Cẩm nang nghề nghiệp",
+    "heading": "Xây dựng nhiều hơn<br></br>đơn ứng tuyển tiếp theo của bạn.",
+    "browseAll": "Xem tất cả cẩm nang",
+    "resources": {
+      "resume": {
+        "title": "CV & Hồ sơ",
+        "description": "Xây dựng hồ sơ gây ấn tượng. Nổi bật với hồ sơ đầy đủ, tối ưu từ khóa mà nhà tuyển dụng thực sự đọc.",
+        "imageAlt": "Người trong văn phòng sáng sủa, thoáng đãng đang viết CV trên laptop với ánh sáng tự nhiên chiếu qua cửa sổ"
+      },
+      "guidance": {
+        "title": "Định hướng nghề nghiệp",
+        "description": "Định hướng bước đi tiếp theo một cách rõ ràng. Nhận tư vấn chuyên sâu về đàm phán lương, chuyển hướng nghề nghiệp và chiến lược phát triển.",
+        "imageAlt": "Hai chuyên gia trong phòng họp hiện đại sáng sủa đang trao đổi về cố vấn nghề nghiệp"
+      },
+      "interview": {
+        "title": "Chuẩn bị phỏng vấn",
+        "description": "Luyện tập với phỏng vấn thử bằng AI. Bước vào mọi buổi phỏng vấn với sự hiểu rõ điều gì đang chờ bạn — và cách gây ấn tượng.",
+        "imageAlt": "Chuyên gia trong phòng đủ sáng đang chuẩn bị cho buổi phỏng vấn video trên laptop"
+      }
+    }
+  },
+  "FinalCTA": {
+    "sectionLabel": "Lời kêu gọi hành động cuối",
+    "eyebrow": "Hơn 120.000 chuyên gia và vẫn đang tăng",
+    "heading": "Sự nghiệp của bạn<br></br>xứng đáng<br></br><em>được rõ ràng hoàn toàn.</em>",
+    "description": "Gia nhập cùng hơn 120.000 chuyên gia Việt Nam đã tìm được công việc tiếp theo qua LamViec360 — và hơn 6.200 nhà tuyển dụng tuyển thông minh hơn mỗi ngày.",
+    "ctaFindRole": "Tìm vị trí tiếp theo của tôi",
+    "ctaCreateProfile": "Tạo hồ sơ của tôi",
+    "backgroundAlt": "Các chuyên gia Việt Nam cộng tác trong văn phòng công nghệ hiện đại",
+    "stats": {
+      "liveJobs": "Việc làm đang tuyển",
+      "hireRate": "Tỷ lệ tuyển thành công",
+      "timeToHire": "Thời gian tuyển trung bình"
+    },
+    "trustedBy": "Được tin dùng bởi"
+  },
+  "Footer": {
+    "tagline": "Hệ điều hành nghề nghiệp hiện đại của Việt Nam — kết nối nhân tài đầy khát vọng với những nhà tuyển dụng tuyển người bằng bối cảnh đầy đủ.",
+    "candidatesHeading": "Dành cho ứng viên",
+    "companiesHeading": "Dành cho công ty",
+    "legalHeading": "Pháp lý",
+    "companySite": "Trang doanh nghiệp",
+    "website": "Website",
+    "copyright": "© {year} Lamviec360. Bảo lưu mọi quyền.",
+    "candidateLinks": {
+      "findJobs": "Tìm việc",
+      "recommendedJobs": "Việc làm gợi ý",
+      "savedJobs": "Việc đã lưu",
+      "myApplications": "Đơn ứng tuyển của tôi",
+      "careerResources": "Cẩm nang nghề nghiệp"
+    },
+    "legalLinks": {
+      "privacy": "Quyền riêng tư",
+      "terms": "Điều khoản",
+      "helpCenter": "Trung tâm trợ giúp"
+    }
+  },
+  "NotFound": {
+    "title": "Không tìm thấy trang",
+    "description": "Trang bạn đang tìm không tồn tại. Hãy quay lại nào!",
+    "goBack": "Quay lại",
+    "goHome": "Về trang chủ"
+  }
+}

@@ -1,0 +1,417 @@
+{
+  "Metadata": {
+    "title": "LamViec360 — Vietnam's Modern Career Platform",
+    "description": "Find your next career move with full salary transparency, AI-powered matching, and 48,000+ verified jobs from Vietnam's top employers.",
+    "ogTitle": "LamViec360 — Career Platform",
+    "ogDescription": "Vietnam's modern career operating system with real salaries and AI matching."
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "switchTo": "Switch to {language}"
+  },
+  "Header": {
+    "nav": {
+      "findJobs": "Find Jobs",
+      "companies": "Companies",
+      "careerResources": "Career Resources",
+      "howItWorks": "How It Works"
+    },
+    "companySite": "Company Site",
+    "login": "Login",
+    "register": "Register",
+    "createFreeAccount": "Create Free Account",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "mobileNavLabel": "Mobile navigation",
+    "mainNavLabel": "Main navigation",
+    "home": "LamViec360 home"
+  },
+  "Hero": {
+    "sectionLabel": "Hero",
+    "eyebrow": "Vietnam's Most Trusted Career Platform",
+    "headline": "Your Next<br></br>Career Move<br></br>Starts Here",
+    "description": "LamViec360 bridges ambitious Vietnamese talent with employers who post with full context — real salaries, real teams, real expectations. No guesswork.",
+    "ctaFindJob": "Find My Job",
+    "ctaCreateProfile": "Create My Profile",
+    "professionalAlt": "Professional {number}",
+    "socialProof": "Trusted by <b>{count}</b> professionals",
+    "portraitAlt": "Vietnamese professional confidently using LamViec360 on laptop in modern office",
+    "matchCard": {
+      "label": "Job match card",
+      "matchScore": "Match Score",
+      "role": "Senior Product Designer",
+      "company": "Tiki"
+    },
+    "statusCard": {
+      "label": "Application status card",
+      "title": "Application Status",
+      "profileCompleted": "Profile Completed",
+      "applicationSubmitted": "Application Submitted",
+      "interviewScheduled": "Interview Scheduled"
+    },
+    "salaryCard": {
+      "label": "Salary insight",
+      "title": "Salary Visible",
+      "value": "94% of jobs"
+    }
+  },
+  "TrustStrip": {
+    "sectionLabel": "Platform statistics",
+    "logosLabel": "Employer logos",
+    "metrics": {
+      "activeJobs": "Active Jobs",
+      "professionals": "Professionals",
+      "employers": "Employers"
+    },
+    "trustedBy": "Trusted by Vietnam's top employers"
+  },
+  "CareerJourney": {
+    "sectionLabel": "Career journey",
+    "eyebrow": "Your Career Journey",
+    "heading": "Everything you need<br></br>to move forward",
+    "stageAria": "Stage {number}: {label}",
+    "stages": {
+      "discover": {
+        "label": "DISCOVER JOBS",
+        "heading": "See every job detail before you apply.",
+        "description": "No more mystery listings. Every role on LamViec360 shows real salary bands, team size, day-to-day expectations, and why the role is open. You decide with confidence.",
+        "metrics": {
+          "salaryTransparency": "Salary Transparency",
+          "responseRate": "Faster Response Rate",
+          "availableRoles": "Available Roles"
+        },
+        "cta": "Explore Jobs"
+      },
+      "apply": {
+        "label": "SMART APPLY",
+        "heading": "Apply smarter. Move faster.",
+        "description": "Your profile IS your application. Fill it once, apply everywhere. Track every response in real-time — no more wondering if your CV landed.",
+        "metrics": {
+          "application": "Application",
+          "responseTracking": "Response Tracking",
+          "timeToOffer": "Avg. Time to Offer"
+        },
+        "cta": "Create My Profile"
+      },
+      "grow": {
+        "label": "CAREER GROWTH",
+        "heading": "Keep moving forward.",
+        "description": "Earn verified badges, complete employer-backed micro-courses, and watch your profile ranking rise. Every action builds toward your next level.",
+        "metrics": {
+          "hiredIn30Days": "Hired in 30 Days",
+          "skillBadges": "Skill Badges",
+          "careerJourneys": "Career Journeys"
+        },
+        "cta": "Start Growing"
+      }
+    },
+    "discoverPreview": {
+      "searchPlaceholder": "Search jobs, companies...",
+      "location": "Ho Chi Minh City",
+      "search": "Search",
+      "jobs": {
+        "designer": "Senior Product Designer",
+        "marketing": "Growth Marketing Lead",
+        "engineer": "Full-Stack Engineer"
+      },
+      "badges": {
+        "new": "New",
+        "hot": "Hot"
+      }
+    },
+    "applyPreview": {
+      "title": "Application Progress",
+      "steps": {
+        "profile": "Profile",
+        "resume": "Resume",
+        "questions": "Questions",
+        "review": "Review",
+        "submit": "Submit"
+      },
+      "stepHeading": "Step {number}: {step}",
+      "stepHints": {
+        "profile": "Your profile is 92% complete. Add your portfolio link to boost match scores.",
+        "resume": "Upload your latest CV or import directly from LinkedIn.",
+        "questions": "Answer 3 role-specific questions from the hiring team.",
+        "review": "Review your application before sending to Tiki.",
+        "submit": "Application submitted! Track responses in real-time."
+      }
+    },
+    "growPreview": {
+      "title": "Career Progress — Tiki Application",
+      "steps": {
+        "applied": "Applied",
+        "underReview": "Under Review",
+        "shortlisted": "Shortlisted",
+        "interview": "Interview",
+        "offer": "Offer"
+      },
+      "active": "Active",
+      "done": "Done",
+      "interviewTitle": "Interview with Tiki Team",
+      "interviewTime": "Tomorrow, 10:00 AM · Video Call"
+    }
+  },
+  "FeaturedJobs": {
+    "sectionLabel": "Featured jobs",
+    "eyebrow": "Matched For You",
+    "heading": "Roles that could<br></br>change your career",
+    "viewAll": "View all 48,000+ jobs",
+    "match": "{match}% Match",
+    "viewRole": "View Role",
+    "viewRoleAria": "View role: {title}",
+    "cardAria": "{title} at {company}",
+    "save": "Save {title}",
+    "removeSaved": "Remove {title} from saved",
+    "type": {
+      "fullTime": "Full-time"
+    },
+    "posted": {
+      "designer": "2 days ago",
+      "marketing": "1 day ago",
+      "engineer": "3 days ago"
+    },
+    "location": {
+      "hcmc": "Ho Chi Minh City",
+      "remote": "Remote",
+      "hanoi": "Hanoi"
+    },
+    "jobs": {
+      "designer": {
+        "title": "Senior Product Designer",
+        "badge": "Top Match"
+      },
+      "marketing": {
+        "title": "Growth Marketing Lead",
+        "badge": "Hot"
+      },
+      "engineer": {
+        "title": "Full-Stack Engineer"
+      }
+    }
+  },
+  "DarkResults": {
+    "sectionLabel": "Platform results",
+    "heading": "Numbers that speak<br></br><em>louder than promises</em>",
+    "results": {
+      "jobs": "Active job listings updated daily",
+      "professionals": "Professionals building careers",
+      "employers": "Verified employers trust LamViec360"
+    }
+  },
+  "SuccessStory": {
+    "sectionLabel": "Candidate success story",
+    "eyebrow": "Success Story",
+    "quote": "I applied to 6 roles in one afternoon. The salary info alone saved me from two bad fits. Got an offer from Tiki in 11 days.",
+    "name": "Nguyễn Thị Hương",
+    "role": "Product Designer · Ho Chi Minh City",
+    "imageAlt": "Nguyễn Thị Hương, Product Designer who found her role through LamViec360 in a bright, modern Ho Chi Minh City office",
+    "avatarAlt": "Nguyễn Thị Hương, Product Designer at Tiki",
+    "hiredBadge": "Hired within 30 days",
+    "stats": {
+      "timeToOffer": "Time to offer",
+      "appliedInOneDay": "Applied in one day",
+      "matchAccuracy": "Match accuracy"
+    }
+  },
+  "HowItWorks": {
+    "sectionLabel": "How it works",
+    "eyebrow": "How It Works",
+    "heading": "Two paths <br></br>One platform",
+    "subheading": "Whether you're searching for your next opportunity or building a world-class team — LamViec360 makes every step clear.",
+    "tabs": {
+      "candidates": "For Candidates",
+      "candidatesTag": "Free Forever",
+      "employers": "For Employers",
+      "employersTag": "Post Free"
+    },
+    "stepAria": "Step {number}: {title}",
+    "ctaCandidates": "Create Free Account",
+    "ctaEmployers": "Post a Job Free",
+    "candidateSteps": {
+      "profile": {
+        "title": "Build Your Profile",
+        "description": "Build your profile in 5 minutes. Import from LinkedIn or fill in our smart form. Add skills, salary expectations, and your preferred work style.",
+        "metric": "5 min setup",
+        "imageAlt": "Profile completion interface showing skills and salary preferences in a bright, clean dashboard"
+      },
+      "match": {
+        "title": "Get Matched",
+        "description": "AI-Powered matching. Our engine surfaces roles where you genuinely fit — filtered by salary, location, company culture, and growth path.",
+        "metric": "94% accuracy",
+        "imageAlt": "Job recommendation interface showing AI-matched roles with salary and culture fit scores"
+      },
+      "apply": {
+        "title": "Apply",
+        "description": "Apply with one tap. Your profile IS your application. Track every response in real time and schedule interviews without email chains.",
+        "metric": "1-tap apply",
+        "imageAlt": "Application progress tracking interface showing status updates in real time"
+      },
+      "grow": {
+        "title": "Grow",
+        "description": "Earn badges and improve your profile. While you search, upskill with employer-backed micro-courses. Verified badges boost your profile ranking.",
+        "metric": "50+ badges",
+        "imageAlt": "Career progress dashboard showing earned badges and profile ranking improvements"
+      }
+    },
+    "employerSteps": {
+      "post": {
+        "title": "Post With Full Context",
+        "description": "Takes 10 min. Use our structured builder to add salary, team culture, growth path, and what a great day in this role looks like.",
+        "metric": "10 min post"
+      },
+      "qualified": {
+        "title": "Receive Pre-Qualified Candidates",
+        "description": "Candidates who apply have already seen your salary range and culture fit. Zero time wasted on mismatched expectations.",
+        "metric": "Pre-filtered"
+      },
+      "engage": {
+        "title": "Engage the Live Talent Feed",
+        "description": "Proactively reach candidates who match your requirements and are actively open to new roles right now.",
+        "metric": "Real-time"
+      },
+      "hire": {
+        "title": "Hire and Track Results",
+        "description": "From first contact to signed offer, our dashboard tracks every candidate interaction and time-to-hire metric.",
+        "metric": "Full analytics"
+      }
+    }
+  },
+  "AIInterview": {
+    "sectionLabel": "AI interview preparation",
+    "eyebrow": "AI Interview Preparation",
+    "live": "LIVE",
+    "heading": "Practice.<br></br>Prepare.<br></br>Perform.",
+    "description": "Prepare for interviews based on your role, experience and skills. Our AI generates tailored questions — so you walk in ready, not rehearsed.",
+    "features": {
+      "roleSpecific": {
+        "title": "Role-specific questions",
+        "desc": "Generated from real interview data for your target role"
+      },
+      "calibrated": {
+        "title": "Experience-calibrated",
+        "desc": "Difficulty adjusts to your level — no generic questions"
+      },
+      "feedback": {
+        "title": "Instant feedback",
+        "desc": "AI scores your answers and suggests improvements"
+      }
+    },
+    "coach": "AI Interview Coach",
+    "coachSubtitle": "Personalized for your role",
+    "form": {
+      "targetRole": "Target Role",
+      "targetRolePlaceholder": "Select your target role",
+      "experience": "Experience Level",
+      "experiencePlaceholder": "Select experience level",
+      "interviewType": "Interview Type",
+      "interviewTypePlaceholder": "Select interview type",
+      "keySkills": "Key Skills",
+      "keySkillsPlaceholder": "e.g. Figma, UX Research, Prototyping",
+      "start": "Start Preparation"
+    },
+    "roles": {
+      "designer": "Product Designer",
+      "engineer": "Software Engineer",
+      "marketing": "Marketing Manager",
+      "data": "Data Analyst",
+      "pm": "Project Manager"
+    },
+    "experienceLevels": {
+      "entry": "Entry Level (0–2 years)",
+      "mid": "Mid Level (2–5 years)",
+      "senior": "Senior (5–8 years)",
+      "lead": "Lead / Principal (8+ years)"
+    },
+    "interviewTypes": {
+      "behavioral": "Behavioral",
+      "technical": "Technical",
+      "caseStudy": "Case Study",
+      "portfolio": "Portfolio Review",
+      "cultureFit": "Culture Fit"
+    },
+    "questionProgress": "Question {current} of {total}",
+    "categories": {
+      "process": "Process",
+      "behavioral": "Behavioral",
+      "technical": "Technical"
+    },
+    "questions": {
+      "q1": "Walk me through your process for designing a new feature from initial brief to final handoff. What tools and frameworks do you rely on?",
+      "q2": "Tell me about a time when user research significantly changed the direction of a product decision. What did you learn?",
+      "q3": "How do you approach designing for accessibility? Give me a specific example from your past work.",
+      "q4": "Describe a situation where you had to push back on a stakeholder request. How did you handle it?",
+      "q5": "What metrics do you use to measure the success of a design? How do you advocate for design quality with engineering?"
+    },
+    "yourAnswer": "Your Answer",
+    "answerPlaceholder": "Type your answer here. Focus on specific examples using the STAR method — Situation, Task, Action, Result.",
+    "exit": "Exit",
+    "nextQuestion": "Next Question",
+    "finishSession": "Finish Session"
+  },
+  "CareerResources": {
+    "sectionLabel": "Career resources",
+    "eyebrow": "Career Resources",
+    "heading": "Build more than<br></br>your next application",
+    "browseAll": "Browse all resources",
+    "resources": {
+      "resume": {
+        "title": "Resume & Profile",
+        "description": "Build a profile that gets noticed. Stand out with a complete, keyword-optimised profile that recruiters actually read.",
+        "imageAlt": "Person in bright, airy office writing resume on laptop with natural light streaming through windows"
+      },
+      "guidance": {
+        "title": "Career Guidance",
+        "description": "Navigate your next move with clarity. Get expert advice on salary negotiation, career transitions, and growth strategies.",
+        "imageAlt": "Two professionals in bright modern meeting room having career mentoring discussion"
+      },
+      "interview": {
+        "title": "Interview Preparation",
+        "description": "Practice with AI-powered mock interviews. Walk into every interview knowing exactly what to expect — and how to impress.",
+        "imageAlt": "Professional in bright, well-lit room preparing for video interview on laptop"
+      }
+    }
+  },
+  "FinalCTA": {
+    "sectionLabel": "Final call to action",
+    "eyebrow": "120,000+ professionals and counting",
+    "heading": "Your career<br></br>deserves<br></br><em>full clarity</em>",
+    "description": "Join 120,000+ Vietnamese professionals who found their next role through LamViec360 — and 6,200+ employers who hire smarter every day.",
+    "ctaFindRole": "Find My Next Role",
+    "ctaCreateProfile": "Create My Profile",
+    "backgroundAlt": "Vietnamese professionals collaborating in a modern tech office",
+    "stats": {
+      "liveJobs": "Live Jobs",
+      "hireRate": "Hire Rate",
+      "timeToHire": "Avg. Time-to-Hire"
+    },
+    "trustedBy": "Trusted by"
+  },
+  "Footer": {
+    "tagline": "Vietnam's modern career operating system — connecting ambitious talent with employers who hire with full context.",
+    "candidatesHeading": "For Candidates",
+    "companiesHeading": "For Companies",
+    "legalHeading": "Legal",
+    "companySite": "Company Site",
+    "website": "Website",
+    "copyright": "© {year} Lamviec360. All rights reserved.",
+    "candidateLinks": {
+      "findJobs": "Find Jobs",
+      "recommendedJobs": "Recommended Jobs",
+      "savedJobs": "Saved Jobs",
+      "myApplications": "My Applications",
+      "careerResources": "Career Resources"
+    },
+    "legalLinks": {
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "helpCenter": "Help Center"
+    }
+  },
+  "NotFound": {
+    "title": "Page Not Found",
+    "description": "The page you're looking for doesn't exist. Let's get you back!",
+    "goBack": "Go Back",
+    "goHome": "Back to Home"
+  }
+}

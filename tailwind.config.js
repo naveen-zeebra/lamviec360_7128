@@ -8,6 +8,9 @@ module.exports = {
       padding: '1rem',
     },
     extend: {
+      screens: {
+        xs: '480px',
+      },
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',

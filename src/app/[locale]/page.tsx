@@ -8,7 +8,7 @@ import FeaturedJobsSection from './components/FeaturedJobsSection';
 import DarkResultsSection from './components/DarkResultsSection';
 import SuccessStorySection from './components/SuccessStorySection';
 import HowItWorksSection from './components/HowItWorksSection';
-import AIInterviewSection from './components/AIInterviewSection';
+// import AIInterviewSection from './components/AIInterviewSection';
 import CareerResourcesSection from './components/CareerResourcesSection';
 import FinalCTASection from './components/FinalCTASection';
 
@@ -39,7 +39,7 @@ export default function Page() {
         <HowItWorksSection />
 
         {/* 08 AI Interview Preparation */}
-        // <AIInterviewSection />
+        {/* <AIInterviewSection /> */}
 
         {/* 09 Career Resources */}
         <CareerResourcesSection />

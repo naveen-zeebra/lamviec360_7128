@@ -1,12 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-
-const metrics = [
-  { value: 48000, suffix: '+', label: 'Active Jobs', prefix: '' },
-  { value: 120000, suffix: '+', label: 'Professionals', prefix: '' },
-  { value: 6200, suffix: '+', label: 'Employers', prefix: '' },
-];
+import { useTranslations } from 'next-intl';
 
 const employers = [
   'Tiki', 'VNG Corp', 'MoMo', 'Shopee VN', 'Grab Vietnam', 'FPT Software',
@@ -53,8 +48,15 @@ function CounterItem({ value, suffix, label, prefix, started }: {
 }
 
 export default function TrustStrip() {
+  const t = useTranslations('TrustStrip');
   const sectionRef = useRef<HTMLDivElement>(null);
   const [started, setStarted] = useState(false);
+
+  const metrics = [
+    { value: 48000, suffix: '+', label: t('metrics.activeJobs'), prefix: '' },
+    { value: 120000, suffix: '+', label: t('metrics.professionals'), prefix: '' },
+    { value: 6200, suffix: '+', label: t('metrics.employers'), prefix: '' },
+  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -66,7 +68,7 @@ export default function TrustStrip() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-16 bg-white border-y border-border" aria-label="Platform statistics">
+    <section ref={sectionRef} className="py-16 bg-white border-y border-border" aria-label={t('sectionLabel')}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Metrics */}
         <div className=" grid grid-cols-1 sm:grid-cols-3 divide-x divide-border mb-12">
@@ -77,10 +79,10 @@ export default function TrustStrip() {
 
         {/* Employer logos */}
         <div className="text-center mb-6">
-          <p className="text-xs font-700 uppercase tracking-widest text-muted">Trusted by Vietnam&apos;s top employers</p>
+          <p className="text-xs font-700 uppercase tracking-widest text-muted">{t('trustedBy')}</p>
         </div>
 
-        <div className="overflow-hidden" aria-label="Employer logos">
+        <div className="overflow-hidden" aria-label={t('logosLabel')}>
           <div className="flex gap-12 marquee-track" style={{ width: 'max-content' }}>
             {employers.map((name, i) => (
               <div

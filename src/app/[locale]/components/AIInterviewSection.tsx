@@ -1,19 +1,21 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import Icon from '@/components/ui/AppIcon';
 
-const roles = ['Product Designer', 'Software Engineer', 'Marketing Manager', 'Data Analyst', 'Project Manager'];
-const experienceLevels = ['Entry Level (0–2 years)', 'Mid Level (2–5 years)', 'Senior (5–8 years)', 'Lead / Principal (8+ years)'];
-const interviewTypes = ['Behavioral', 'Technical', 'Case Study', 'Portfolio Review', 'Culture Fit'];
+const roleKeys = ['designer', 'engineer', 'marketing', 'data', 'pm'] as const;
+const experienceKeys = ['entry', 'mid', 'senior', 'lead'] as const;
+const interviewTypeKeys = ['behavioral', 'technical', 'caseStudy', 'portfolio', 'cultureFit'] as const;
 
-const mockQuestions = [
-  { q: 'Walk me through your process for designing a new feature from initial brief to final handoff. What tools and frameworks do you rely on?', category: 'Process' },
-  { q: 'Tell me about a time when user research significantly changed the direction of a product decision. What did you learn?', category: 'Behavioral' },
-  { q: 'How do you approach designing for accessibility? Give me a specific example from your past work.', category: 'Technical' },
-  { q: 'Describe a situation where you had to push back on a stakeholder request. How did you handle it?', category: 'Behavioral' },
-  { q: 'What metrics do you use to measure the success of a design? How do you advocate for design quality with engineering?', category: 'Process' },
-];
+const questionKeys = ['q1', 'q2', 'q3', 'q4', 'q5'] as const;
+const questionCategories = ['process', 'behavioral', 'technical', 'behavioral', 'process'] as const;
+
+const featureKeys = [
+  { key: 'roleSpecific', icon: 'BoltIcon' },
+  { key: 'calibrated', icon: 'ChartBarIcon' },
+  { key: 'feedback', icon: 'AcademicCapIcon' },
+] as const;
 
 interface FormState {
   role: string;
@@ -23,6 +25,7 @@ interface FormState {
 }
 
 export default function AIInterviewSection() {
+  const t = useTranslations('AIInterview');
   const [formState, setFormState] = useState<FormState>({ role: '', experience: '', interviewType: '', skills: '' });
   const [started, setStarted] = useState(false);
   const [currentQ, setCurrentQ] = useState(0);
@@ -41,7 +44,7 @@ export default function AIInterviewSection() {
   const handleNext = () => {
     setAnswers((prev) => [...prev, answer]);
     setAnswer('');
-    if (currentQ < mockQuestions.length - 1) {
+    if (currentQ < questionKeys.length - 1) {
       setCurrentQ((prev) => prev + 1);
     } else {
       setStarted(false);
@@ -49,10 +52,10 @@ export default function AIInterviewSection() {
     }
   };
 
-  const progress = ((currentQ + 1) / mockQuestions.length) * 100;
+  const progress = ((currentQ + 1) / questionKeys.length) * 100;
 
   return (
-    <section id="ai-prep" className="py-24 bg-white" aria-label="AI interview preparation">
+    <section id="ai-prep" className="py-24 bg-white" aria-label={t('sectionLabel')}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
 
@@ -61,36 +64,28 @@ export default function AIInterviewSection() {
             <div className="flex items-center gap-2 mb-6">
               <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/8 border border-primary/15">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary animate-dot-pulse" />
-                <span className="section-eyebrow">AI Interview Preparation</span>
+                <span className="section-eyebrow">{t('eyebrow')}</span>
               </div>
-              <span className="text-xs font-700 text-success bg-success/10 px-2 py-1 rounded-full">LIVE</span>
+              <span className="text-xs font-700 text-success bg-success/10 px-2 py-1 rounded-full">{t('live')}</span>
             </div>
 
             <h2 className="text-display-m text-foreground mb-6">
-              Practice.
-              <br />
-              Prepare.
-              <br />
-              <span className="text-gradient-blue">Perform.</span>
+              {t.rich('heading', { br: () => <br /> })}
             </h2>
 
             <p className="text-lg text-muted leading-relaxed mb-10">
-              Prepare for interviews based on your role, experience and skills. Our AI generates tailored questions — so you walk in ready, not rehearsed.
+              {t('description')}
             </p>
 
             <div className="flex flex-col gap-4">
-              {[
-                { icon: 'BoltIcon', title: 'Role-specific questions', desc: 'Generated from real interview data for your target role' },
-                { icon: 'ChartBarIcon', title: 'Experience-calibrated', desc: 'Difficulty adjusts to your level — no generic questions' },
-                { icon: 'AcademicCapIcon', title: 'Instant feedback', desc: 'AI scores your answers and suggests improvements' },
-              ].map((item) => (
-                <div key={item.title} className="flex items-start gap-4">
+              {featureKeys.map((item) => (
+                <div key={item.key} className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                    <Icon name={item.icon as 'BoltIcon'} size={18} className="text-primary" />
+                    <Icon name={item.icon} size={18} className="text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm font-700 text-foreground mb-0.5">{item.title}</p>
-                    <p className="text-sm text-muted">{item.desc}</p>
+                    <p className="text-sm font-700 text-foreground mb-0.5">{t(`features.${item.key}.title`)}</p>
+                    <p className="text-sm text-muted">{t(`features.${item.key}.desc`)}</p>
                   </div>
                 </div>
               ))}
@@ -110,15 +105,15 @@ export default function AIInterviewSection() {
                       <Icon name="SparklesIcon" size={20} className="text-white" />
                     </div>
                     <div>
-                      <p className="text-sm font-700 text-foreground">AI Interview Coach</p>
-                      <p className="text-xs text-muted">Personalized for your role</p>
+                      <p className="text-sm font-700 text-foreground">{t('coach')}</p>
+                      <p className="text-xs text-muted">{t('coachSubtitle')}</p>
                     </div>
                   </div>
 
                   <form onSubmit={handleStart} className="space-y-5">
                     <div>
                       <label className="block text-xs font-700 text-foreground/60 uppercase tracking-wider mb-2" htmlFor="target-role">
-                        Target Role
+                        {t('form.targetRole')}
                       </label>
                       <select
                         id="target-role"
@@ -127,14 +122,14 @@ export default function AIInterviewSection() {
                         className="w-full bg-input border border-border rounded-xl px-4 py-3 text-sm text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
                         required
                       >
-                        <option value="">Select your target role</option>
-                        {roles.map((r) => <option key={r} value={r}>{r}</option>)}
+                        <option value="">{t('form.targetRolePlaceholder')}</option>
+                        {roleKeys.map((r) => <option key={r} value={r}>{t(`roles.${r}`)}</option>)}
                       </select>
                     </div>
 
                     <div>
                       <label className="block text-xs font-700 text-foreground/60 uppercase tracking-wider mb-2" htmlFor="experience">
-                        Experience Level
+                        {t('form.experience')}
                       </label>
                       <select
                         id="experience"
@@ -142,14 +137,14 @@ export default function AIInterviewSection() {
                         onChange={(e) => setFormState({ ...formState, experience: e.target.value })}
                         className="w-full bg-input border border-border rounded-xl px-4 py-3 text-sm text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
                       >
-                        <option value="">Select experience level</option>
-                        {experienceLevels.map((l) => <option key={l} value={l}>{l}</option>)}
+                        <option value="">{t('form.experiencePlaceholder')}</option>
+                        {experienceKeys.map((l) => <option key={l} value={l}>{t(`experienceLevels.${l}`)}</option>)}
                       </select>
                     </div>
 
                     <div>
                       <label className="block text-xs font-700 text-foreground/60 uppercase tracking-wider mb-2" htmlFor="interview-type">
-                        Interview Type
+                        {t('form.interviewType')}
                       </label>
                       <select
                         id="interview-type"
@@ -157,21 +152,21 @@ export default function AIInterviewSection() {
                         onChange={(e) => setFormState({ ...formState, interviewType: e.target.value })}
                         className="w-full bg-input border border-border rounded-xl px-4 py-3 text-sm text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
                       >
-                        <option value="">Select interview type</option>
-                        {interviewTypes.map((t) => <option key={t} value={t}>{t}</option>)}
+                        <option value="">{t('form.interviewTypePlaceholder')}</option>
+                        {interviewTypeKeys.map((ty) => <option key={ty} value={ty}>{t(`interviewTypes.${ty}`)}</option>)}
                       </select>
                     </div>
 
                     <div>
                       <label className="block text-xs font-700 text-foreground/60 uppercase tracking-wider mb-2" htmlFor="skills">
-                        Key Skills
+                        {t('form.keySkills')}
                       </label>
                       <input
                         id="skills"
                         type="text"
                         value={formState.skills}
                         onChange={(e) => setFormState({ ...formState, skills: e.target.value })}
-                        placeholder="e.g. Figma, UX Research, Prototyping"
+                        placeholder={t('form.keySkillsPlaceholder')}
                         className="w-full bg-input border border-border rounded-xl px-4 py-3 text-sm text-foreground placeholder-muted focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
                       />
                     </div>
@@ -181,7 +176,7 @@ export default function AIInterviewSection() {
                       className="w-full flex items-center justify-center gap-2 bg-primary text-primary-foreground font-700 py-4 rounded-xl hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl group"
                     >
                       <Icon name="SparklesIcon" size={18} />
-                      Start Preparation
+                      {t('form.start')}
                       <Icon name="ArrowRightIcon" size={16} className="group-hover:translate-x-1 transition-transform" />
                     </button>
                   </form>
@@ -196,11 +191,11 @@ export default function AIInterviewSection() {
                         <Icon name="SparklesIcon" size={14} className="text-white" />
                       </div>
                       <span className="text-sm font-700 text-foreground">
-                        Question {currentQ + 1} of {mockQuestions.length}
+                        {t('questionProgress', { current: currentQ + 1, total: questionKeys.length })}
                       </span>
                     </div>
                     <span className="text-xs font-600 text-muted bg-input px-2 py-1 rounded-lg">
-                      {mockQuestions[currentQ].category}
+                      {t(`categories.${questionCategories[currentQ]}`)}
                     </span>
                   </div>
 
@@ -212,28 +207,28 @@ export default function AIInterviewSection() {
                       role="progressbar"
                       aria-valuenow={currentQ + 1}
                       aria-valuemin={1}
-                      aria-valuemax={mockQuestions.length}
+                      aria-valuemax={questionKeys.length}
                     />
                   </div>
 
                   {/* Question */}
                   <div className="bg-primary/5 rounded-2xl p-6 mb-6 border border-primary/15">
                     <p className="text-base font-600 text-foreground leading-relaxed">
-                      {mockQuestions[currentQ].q}
+                      {t(`questions.${questionKeys[currentQ]}`)}
                     </p>
                   </div>
 
                   {/* Answer Area */}
                   <div className="mb-6">
                     <label className="block text-xs font-700 text-foreground/60 uppercase tracking-wider mb-2" htmlFor="answer">
-                      Your Answer
+                      {t('yourAnswer')}
                     </label>
                     <textarea
                       id="answer"
                       value={answer}
                       onChange={(e) => setAnswer(e.target.value)}
                       rows={5}
-                      placeholder="Type your answer here. Focus on specific examples using the STAR method — Situation, Task, Action, Result."
+                      placeholder={t('answerPlaceholder')}
                       className="w-full bg-input border border-border rounded-xl px-4 py-3 text-sm text-foreground placeholder-muted focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none"
                     />
                   </div>
@@ -243,13 +238,13 @@ export default function AIInterviewSection() {
                       onClick={() => { setStarted(false); }}
                       className="px-4 py-3 border border-border text-sm font-600 text-muted rounded-xl hover:border-foreground hover:text-foreground transition-all"
                     >
-                      Exit
+                      {t('exit')}
                     </button>
                     <button
                       onClick={handleNext}
                       className="flex-1 flex items-center justify-center gap-2 bg-primary text-primary-foreground font-700 py-3 rounded-xl hover:bg-primary/90 transition-all group"
                     >
-                      {currentQ < mockQuestions.length - 1 ? 'Next Question' : 'Finish Session'}
+                      {currentQ < questionKeys.length - 1 ? t('nextQuestion') : t('finishSession')}
                       <Icon name="ArrowRightIcon" size={16} className="group-hover:translate-x-0.5 transition-transform" />
                     </button>
                   </div>

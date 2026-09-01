@@ -1,12 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-
-const results = [
-  { value: 48000, suffix: '+', label: 'Active job listings updated daily', prefix: '' },
-  { value: 120, suffix: 'K+', label: 'Professionals building careers', prefix: '' },
-  { value: 6200, suffix: '+', label: 'Verified employers trust LamViec360', prefix: '' },
-];
+import { useTranslations } from 'next-intl';
 
 function useCountUp(target: number, duration = 2400, start = false) {
   const [count, setCount] = useState(0);
@@ -42,8 +37,15 @@ function BigStat({ value, suffix, label, prefix, started }: {
 }
 
 export default function DarkResultsSection() {
+  const t = useTranslations('DarkResults');
   const sectionRef = useRef<HTMLDivElement>(null);
   const [started, setStarted] = useState(false);
+
+  const results = [
+    { value: 48000, suffix: '+', label: t('results.jobs'), prefix: '' },
+    { value: 120, suffix: 'K+', label: t('results.professionals'), prefix: '' },
+    { value: 6200, suffix: '+', label: t('results.employers'), prefix: '' },
+  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -58,7 +60,7 @@ export default function DarkResultsSection() {
     <section
       ref={sectionRef}
       className="py-24 bg-dark-mesh bg-noise relative overflow-hidden"
-      aria-label="Platform results"
+      aria-label={t('sectionLabel')}
       style={{ backgroundColor: 'var(--dark-bg)' }}
     >
       {/* Background grid */}
@@ -78,9 +80,10 @@ export default function DarkResultsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-display-m text-white">
-            Numbers that speak
-            <br />
-            <span className="text-gradient-blue">louder than promises.</span>
+            {t.rich('heading', {
+              br: () => <br />,
+              em: (chunks) => <span className="text-gradient-blue">{chunks}</span>,
+            })}
           </h2>
         </div>
 

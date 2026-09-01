@@ -1,4 +1,7 @@
+import createNextIntlPlugin from 'next-intl/plugin';
 import { imageHosts } from './image-hosts.config.mjs';
+
+const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -42,4 +45,4 @@ const nextConfig = {
     return config;
   },
 };
-export default nextConfig;
+export default withNextIntl(nextConfig);

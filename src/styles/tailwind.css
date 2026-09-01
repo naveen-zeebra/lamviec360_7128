@@ -123,12 +123,12 @@
       #F7F8FA;
   }
 
-  .bg-grid-subtle {
+  /* .bg-grid-subtle {
     background-image:
       linear-gradient(rgba(26, 86, 219, 0.04) 1px, transparent 1px),
       linear-gradient(90deg, rgba(26, 86, 219, 0.04) 1px, transparent 1px);
     background-size: 40px 40px;
-  }
+  } */
 
   .bg-dark-mesh {
     background:
