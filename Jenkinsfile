@@ -1,5 +1,4 @@
 pipeline {
-
     agent any
 
     options {
@@ -23,37 +22,65 @@ pipeline {
         }
 
         stage('Install Dependencies') {
+            agent {
+                docker {
+                    image 'node:20-alpine'
+                    reuseNode true
+                }
+            }
+
             steps {
-                sh 'npm ci'
+                sh '''
+                    node --version
+                    npm --version
+                    npm ci
+                '''
             }
         }
 
         stage('Lint') {
+            agent {
+                docker {
+                    image 'node:20-alpine'
+                    reuseNode true
+                }
+            }
+
             steps {
-                sh 'npm run lint'
+                sh '''
+                    npm run lint
+                '''
             }
         }
 
         stage('Build') {
+            agent {
+                docker {
+                    image 'node:20-alpine'
+                    reuseNode true
+                }
+            }
+
             steps {
-                sh 'npm run build'
+                sh '''
+                    npm run build
+                '''
             }
         }
 
         stage('Docker Build') {
             steps {
-                sh """
+                sh '''
                     docker build \
                         -t ${DOCKER_IMAGE}:${BUILD_NUMBER} \
                         -t ${DOCKER_IMAGE}:latest \
                         .
-                """
+                '''
             }
         }
 
         stage('Docker Push') {
             steps {
-
                 withCredentials([
                     usernamePassword(
                         credentialsId: "${DOCKER_CREDENTIALS}",
@@ -61,7 +88,6 @@ pipeline {
                         passwordVariable: 'DOCKER_PASS'
                     )
                 ]) {
-
                     sh '''
                         echo "$DOCKER_PASS" | docker login \
                             -u "$DOCKER_USER" \
@@ -78,25 +104,19 @@ pipeline {
     }
 
     post {
-
         success {
-            echo "===================================="
-            echo "BUILD SUCCESSFUL"
-            echo "Docker image:"
-            echo "${DOCKER_IMAGE}:${BUILD_NUMBER}"
-            echo "${DOCKER_IMAGE}:latest"
-            echo "===================================="
+            echo 'BUILD SUCCESSFUL'
         }
 
         failure {
-            echo "BUILD FAILED"
+            echo 'BUILD FAILED'
         }
 
         cleanup {
-            sh """
+            sh '''
                 docker rmi ${DOCKER_IMAGE}:${BUILD_NUMBER} || true
                 docker rmi ${DOCKER_IMAGE}:latest || true
-            """
+            '''
         }
     }
 }
