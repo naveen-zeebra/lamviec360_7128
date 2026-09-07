@@ -1,9 +1,21 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Jenkinsfile — LamViec360 Job Seeker Landing
 // Next.js CI/CD Pipeline
+//
+// GitHub:
+// https://github.com/naveen-zeebra/lamviec360_7128
+//
+// Docker Hub:
+// naveenkumar1137/jobseeker-landing
+//
+// Deployment:
+// Server: 103.175.146.37
+// User: deploy
+// Port: 4028
 ///////////////////////////////////////////////////////////////////////////////
 
 pipeline {
+
     agent any
 
     options {
@@ -14,48 +26,132 @@ pipeline {
     }
 
     environment {
-        DOCKER_REGISTRY   = 'docker.io'
-        DOCKER_REPO       = 'naveenkumar1137/jobseeker-landing'
 
-        IMAGE_TAG         = "${BUILD_NUMBER}"
-        IMAGE_FULL        = "${DOCKER_REGISTRY}/${DOCKER_REPO}:${BUILD_NUMBER}"
-        IMAGE_LATEST      = "${DOCKER_REGISTRY}/${DOCKER_REPO}:latest"
+        // ---------------------------------------------------------------------
+        // Docker
+        // ---------------------------------------------------------------------
 
+        DOCKER_REGISTRY = 'docker.io'
+
+        DOCKER_REPO = 'naveenkumar1137/jobseeker-landing'
+
+        IMAGE_TAG = "${BUILD_NUMBER}"
+
+        IMAGE_FULL = "${DOCKER_REGISTRY}/${DOCKER_REPO}:${BUILD_NUMBER}"
+
+        IMAGE_LATEST = "${DOCKER_REGISTRY}/${DOCKER_REPO}:latest"
+
+        // Jenkins Docker Hub credential
         DOCKER_CREDENTIALS = 'dockerhub-credentials'
 
-        DEPLOY_HOST        = '103.175.146.37'
-        SSH_CREDENTIALS    = 'ssh-dev-server'
+
+        // ---------------------------------------------------------------------
+        // Remote Deployment
+        // ---------------------------------------------------------------------
+
+        DEPLOY_HOST = '103.175.146.37'
+
+        DEPLOY_USER = 'deploy'
+
+        SSH_CREDENTIALS = 'ssh-dev-server'
 
         REMOTE_PROJECT_DIR = '/opt/jobseeker-landing'
+
+
+        // ---------------------------------------------------------------------
+        // Application
+        // ---------------------------------------------------------------------
+
+        APP_PORT = '4028'
+
+        CONTAINER_NAME = 'lv360_jobseeker_landing'
     }
+
 
     stages {
 
-        // ---------------------------------------------------------------------
-        // Stage 1: Checkout
-        // ---------------------------------------------------------------------
+        // =====================================================================
+        // 1. CHECKOUT
+        // =====================================================================
+
         stage('Checkout') {
+
             steps {
+
                 checkout scm
 
                 script {
+
                     env.GIT_COMMIT_SHORT = sh(
                         script: 'git rev-parse --short HEAD',
                         returnStdout: true
                     ).trim()
 
-                    echo "Building commit ${env.GIT_COMMIT_SHORT}"
+                    env.GIT_BRANCH_NAME = sh(
+                        script: 'git rev-parse --abbrev-ref HEAD',
+                        returnStdout: true
+                    ).trim()
+
+                    echo "=============================================="
+                    echo "Job Seeker Landing"
+                    echo "Commit : ${env.GIT_COMMIT_SHORT}"
+                    echo "Branch : ${env.GIT_BRANCH_NAME}"
+                    echo "=============================================="
                 }
             }
         }
 
-        // ---------------------------------------------------------------------
-        // Stage 2: Install Dependencies
-        // ---------------------------------------------------------------------
-        stage('Install Dependencies') {
+
+        // =====================================================================
+        // 2. VERIFY PROJECT FILES
+        // =====================================================================
+
+        stage('Verify Project') {
+
             steps {
+
                 sh '''
+                    echo "=============================================="
+                    echo "PROJECT FILES"
+                    echo "=============================================="
+
+                    pwd
+
+                    echo ""
+                    echo "package.json:"
+                    ls -lh package.json
+
+                    echo ""
+                    echo "package-lock.json:"
+                    ls -lh package-lock.json
+
+                    echo ""
+                    echo "Next.js configuration:"
+                    ls -lh next.config.* 2>/dev/null || true
+
+                    echo ""
+                    echo "Project structure:"
+                    ls -la
+                '''
+            }
+        }
+
+
+        // =====================================================================
+        // 3. INSTALL DEPENDENCIES
+        // =====================================================================
+
+        stage('Install Dependencies') {
+
+            steps {
+
+                sh '''
+                    echo "=============================================="
+                    echo "INSTALL DEPENDENCIES"
+                    echo "=============================================="
+
                     docker build \
+                        --no-cache \
                         -f - \
                         -t jobseeker-node:${BUILD_NUMBER} . <<'DOCKERFILE'
 
@@ -63,70 +159,139 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY package.json package-lock.json ./
+
+RUN echo "========================================" && \
+    echo "Node version" && \
+    node --version && \
+    echo "NPM version" && \
+    npm --version && \
+    echo "========================================"
+
+RUN echo "Checking @swc/helpers in lockfile..." && \
+    grep -n '"@swc/helpers"' package-lock.json || true
 
 RUN npm ci --prefer-offline --no-audit
 
-COPY . .
-
 DOCKERFILE
 
-                    docker run --rm \
-                        jobseeker-node:${BUILD_NUMBER} \
-                        node --version
-
-                    docker run --rm \
-                        jobseeker-node:${BUILD_NUMBER} \
-                        npm --version
+                    echo ""
+                    echo "Dependency installation successful."
                 '''
             }
         }
 
-        // ---------------------------------------------------------------------
-        // Stage 3: Lint
-        // ---------------------------------------------------------------------
+
+        // =====================================================================
+        // 4. LINT
+        // =====================================================================
+
         stage('Lint') {
+
             steps {
+
                 sh '''
+                    echo "=============================================="
+                    echo "LINT"
+                    echo "=============================================="
+
                     docker run --rm \
                         jobseeker-node:${BUILD_NUMBER} \
                         npm run lint
+
+                    echo ""
+                    echo "Lint successful."
                 '''
             }
         }
 
-        // ---------------------------------------------------------------------
-        // Stage 4: Build
-        // ---------------------------------------------------------------------
+
+        // =====================================================================
+        // 5. NEXT.JS BUILD
+        // =====================================================================
+
         stage('Build') {
+
             steps {
+
                 sh '''
+                    echo "=============================================="
+                    echo "NEXT.JS BUILD"
+                    echo "=============================================="
+
                     docker run --rm \
                         jobseeker-node:${BUILD_NUMBER} \
-                        npm run build
+                        sh -c "npm run build"
+
+                    echo ""
+                    echo "Next.js build successful."
                 '''
             }
         }
 
-        // ---------------------------------------------------------------------
-        // Stage 5: Docker Build
-        // ---------------------------------------------------------------------
+
+        // =====================================================================
+        // 6. DOCKER APPLICATION BUILD
+        // =====================================================================
+
         stage('Docker Build') {
+
             steps {
+
                 sh '''
+                    echo "=============================================="
+                    echo "DOCKER APPLICATION BUILD"
+                    echo "=============================================="
+
                     docker build \
+                        --pull \
                         -t ${IMAGE_FULL} \
                         -t ${IMAGE_LATEST} \
                         .
+
+                    echo ""
+                    echo "Docker image created:"
+                    echo "${IMAGE_FULL}"
+                    echo "${IMAGE_LATEST}"
                 '''
             }
         }
 
-        // ---------------------------------------------------------------------
-        // Stage 6: Docker Push
-        // ---------------------------------------------------------------------
-        stage('Docker Push') {
+
+        // =====================================================================
+        // 7. DOCKER IMAGE CHECK
+        // =====================================================================
+
+        stage('Docker Image Check') {
+
             steps {
+
+                sh '''
+                    echo "=============================================="
+                    echo "DOCKER IMAGE CHECK"
+                    echo "=============================================="
+
+                    docker image inspect ${IMAGE_FULL} > /dev/null
+
+                    echo ""
+                    echo "Image exists successfully."
+
+                    docker images \
+                        ${DOCKER_REPO} \
+                        --format "table {{.Repository}}\\t{{.Tag}}\\t{{.Size}}"
+                '''
+            }
+        }
+
+
+        // =====================================================================
+        // 8. DOCKER HUB PUSH
+        // =====================================================================
+
+        stage('Docker Push') {
+
+            steps {
+
                 withCredentials([
                     usernamePassword(
                         credentialsId: env.DOCKER_CREDENTIALS,
@@ -134,14 +299,29 @@ DOCKERFILE
                         passwordVariable: 'DOCKER_PASS'
                     )
                 ]) {
+
                     sh '''
+                        echo "=============================================="
+                        echo "DOCKER HUB PUSH"
+                        echo "=============================================="
+
                         echo "$DOCKER_PASS" | docker login \
                             ${DOCKER_REGISTRY} \
                             -u "$DOCKER_USER" \
                             --password-stdin
 
+                        echo ""
+                        echo "Pushing build image..."
+
                         docker push ${IMAGE_FULL}
+
+                        echo ""
+                        echo "Pushing latest image..."
+
                         docker push ${IMAGE_LATEST}
+
+                        echo ""
+                        echo "Docker Hub push successful."
 
                         docker logout ${DOCKER_REGISTRY}
                     '''
@@ -149,33 +329,68 @@ DOCKERFILE
             }
         }
 
-        // ---------------------------------------------------------------------
-        // Stage 7: Deploy
-        // ---------------------------------------------------------------------
+
+        // =====================================================================
+        // 9. DEPLOY
+        // =====================================================================
+
         stage('Deploy') {
+
             steps {
+
                 sshagent(credentials: [env.SSH_CREDENTIALS]) {
+
                     sh '''
-                        ssh -o StrictHostKeyChecking=no \
-                            deploy@${DEPLOY_HOST} << 'ENDSSH'
+                        echo "=============================================="
+                        echo "REMOTE DEPLOYMENT"
+                        echo "=============================================="
+
+                        echo "Server : ${DEPLOY_HOST}"
+                        echo "User   : ${DEPLOY_USER}"
+                        echo "Port   : ${APP_PORT}"
+                        echo "Image  : ${IMAGE_FULL}"
+
+                        ssh \
+                            -o StrictHostKeyChecking=no \
+                            ${DEPLOY_USER}@${DEPLOY_HOST} << ENDSSH
 
                             set -e
 
-                            echo "Starting Job Seeker Landing deployment..."
+                            echo "=========================================="
+                            echo "Preparing deployment directory"
+                            echo "=========================================="
 
                             mkdir -p ${REMOTE_PROJECT_DIR}
 
                             cd ${REMOTE_PROJECT_DIR}
 
+                            echo ""
                             echo "Pulling Docker image..."
 
                             docker pull ${IMAGE_FULL}
 
-                            echo "Starting container..."
+                            echo ""
+                            echo "Updating deployment image tag..."
+
+                            export DOCKER_IMAGE_TAG=${BUILD_NUMBER}
+
+                            echo ""
+                            echo "Docker image:"
+                            echo "${DOCKER_REPO}:\${DOCKER_IMAGE_TAG}"
+
+                            echo ""
+                            echo "Starting Job Seeker Landing..."
 
                             docker compose up -d --force-recreate
 
-                            echo "Deployment completed."
+                            echo ""
+                            echo "Container status:"
+
+                            docker ps \
+                                --filter "name=${CONTAINER_NAME}"
+
+                            echo ""
+                            echo "Deployment started successfully."
 
 ENDSSH
                     '''
@@ -183,32 +398,52 @@ ENDSSH
             }
         }
 
-        // ---------------------------------------------------------------------
-        // Stage 8: Health Check
-        // ---------------------------------------------------------------------
+
+        // =====================================================================
+        // 10. HEALTH CHECK
+        // =====================================================================
+
         stage('Health Check') {
+
             steps {
+
                 sshagent(credentials: [env.SSH_CREDENTIALS]) {
+
                     sh '''
-                        ssh -o StrictHostKeyChecking=no \
-                            deploy@${DEPLOY_HOST} << 'ENDSSH'
+                        echo "=============================================="
+                        echo "HEALTH CHECK"
+                        echo "=============================================="
+
+                        ssh \
+                            -o StrictHostKeyChecking=no \
+                            ${DEPLOY_USER}@${DEPLOY_HOST} << ENDSSH
 
                             set -e
 
-                            echo "Waiting for application..."
+                            echo "Waiting for application to start..."
 
                             sleep 10
 
-                            echo "Checking container..."
+                            echo ""
+                            echo "Container status:"
 
                             docker ps \
-                                --filter "name=lv360_jobseeker_landing"
+                                --filter "name=${CONTAINER_NAME}"
 
-                            echo "Checking application..."
+                            echo ""
+                            echo "Application health check..."
 
-                            curl -f http://localhost:4028/ || exit 1
+                            curl \
+                                --fail \
+                                --silent \
+                                --show-error \
+                                http://localhost:${APP_PORT}/ \
+                                > /dev/null
 
-                            echo "Job Seeker Landing health check PASSED."
+                            echo ""
+                            echo "=========================================="
+                            echo "HEALTH CHECK PASSED"
+                            echo "=========================================="
 
 ENDSSH
                     '''
@@ -217,27 +452,63 @@ ENDSSH
         }
     }
 
+
+    // =========================================================================
+    // POST ACTIONS
+    // =========================================================================
+
     post {
+
         success {
-            echo "=============================================="
-            echo "JOB SEEKER LANDING DEPLOYMENT SUCCESS"
-            echo "Image: ${IMAGE_FULL}"
-            echo "Server: ${DEPLOY_HOST}"
-            echo "Port: 4028"
-            echo "=============================================="
+
+            echo """
+==============================================
+JOB SEEKER LANDING CI/CD SUCCESS
+==============================================
+
+Commit       : ${env.GIT_COMMIT_SHORT}
+Docker Image : ${IMAGE_FULL}
+Latest Image : ${IMAGE_LATEST}
+Server       : ${DEPLOY_HOST}
+Port         : ${APP_PORT}
+Container    : ${CONTAINER_NAME}
+
+Deployment successful.
+==============================================
+"""
         }
+
 
         failure {
-            echo "=============================================="
-            echo "JOB SEEKER LANDING PIPELINE FAILED"
-            echo "=============================================="
+
+            echo """
+==============================================
+JOB SEEKER LANDING CI/CD FAILED
+==============================================
+
+Commit : ${env.GIT_COMMIT_SHORT ?: 'unknown'}
+Stage  : ${env.STAGE_NAME ?: 'unknown'}
+
+Please check the failed stage above.
+==============================================
+"""
         }
 
+
         cleanup {
+
             sh '''
+                echo "=============================================="
+                echo "CLEANUP"
+                echo "=============================================="
+
                 docker rmi ${IMAGE_FULL} 2>/dev/null || true
+
                 docker rmi ${IMAGE_LATEST} 2>/dev/null || true
+
                 docker rmi jobseeker-node:${BUILD_NUMBER} 2>/dev/null || true
+
+                echo "Cleanup completed."
             '''
         }
     }
