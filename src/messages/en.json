@@ -68,7 +68,7 @@
   "CareerJourney": {
     "sectionLabel": "Career journey",
     "eyebrow": "Your Career Journey",
-    "heading": "Everything you need<br></br>to move forward",
+    "heading": "Everything you need to move forward",
     "stageAria": "Stage {number}: {label}",
     "stages": {
       "discover": {

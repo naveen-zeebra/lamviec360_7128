@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  frontend:
+    image: naveenkumar1137/jobseeker-landing:${DOCKER_IMAGE_TAG:-dev-latest}
+    container_name: lv360_jobseeker_frontend
+
+    restart: always
+
+    ports:
+      - "4028:4028"
+
+    env_file:
+      - .env.dev
+
+    networks:
+      - lv360-shared-network
+
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "--tries=1", "http://localhost:4028"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+networks:
+  lv360-shared-network:
+    external: true
