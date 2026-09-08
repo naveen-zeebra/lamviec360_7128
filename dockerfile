@@ -47,7 +47,8 @@ COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./package.json
 COPY --from=builder /app/next.config.mjs ./next.config.mjs
+COPY --from=builder /app/image-hosts.config.mjs ./image-hosts.config.mjs
 
 EXPOSE 4028
 
-CMD ["npm", "run", "start", "--", "-p", "4028"]
+CMD ["npm", "run", "serve", "--", "-p", "4028"]

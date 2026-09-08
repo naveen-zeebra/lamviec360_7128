@@ -1,27 +1,21 @@
-
 services:
   frontend:
-    image: naveenkumar1137/jobseeker-landing:${DOCKER_IMAGE_TAG:-dev-latest}
-    container_name: lv360_jobseeker_frontend
-
-    restart: always
-
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "4028:4028"
-
-    env_file:
-      - .env.dev
-
+    environment:
+      - PUBLIC_NEXT_NODE_ENV=development
     networks:
-      - lv360-shared-network
+      - app-network
 
     healthcheck:
-      test: ["CMD", "wget", "--spider", "--tries=1", "http://localhost:4028"]
+      test: [ "CMD", "wget", "--spider", "--tries=1", "http://localhost:4028" ]
       interval: 30s
       timeout: 10s
       retries: 5
 
 networks:
-  lv360-shared-network:
-    external: true
-
+  app-network:
+    driver: bridge
