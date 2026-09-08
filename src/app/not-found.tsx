@@ -23,7 +23,7 @@ export default function GlobalNotFound() {
               href={`/${routing.defaultLocale}`}
               className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors duration-200"
             >
-              Back to Home
+              Back to Home 
             </Link>
           </div>
         </div>
