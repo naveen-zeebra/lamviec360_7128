@@ -23,7 +23,7 @@ pipeline {
         IMAGE_FULL = "${DOCKER_REGISTRY}/${DOCKER_REPO}:${BUILD_NUMBER}"
         IMAGE_LATEST = "${DOCKER_REGISTRY}/${DOCKER_REPO}:latest"
 
-        DOCKER_CREDENTIALS = 'dockerhub-credentials'
+        DOCKER_CREDENTIALS = 'dockerhub'
 
         DEPLOY_HOST = '103.175.146.37'
         DEPLOY_USER = 'deploy'
